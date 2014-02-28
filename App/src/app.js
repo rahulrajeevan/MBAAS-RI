@@ -3,6 +3,7 @@ angular.module('MBAAS-RI', ['ionic', 'MBAAS-RI.view'])
 			$stateProvider
 				.state('signin', {url: "/login", templateUrl: "src/view/login/login.html", role: 'public', controller: 'logInCtrl'})
 				.state('home', {url: "/home", templateUrl: "src/view/home/home.html", role: 'public', controller: 'homeCtrl'})
+				.state('forgotPwd', {url: "/forgotPwd", templateUrl: "src/view/forgotpassword/forgotpassword.html", role: 'public', controller: 'forgotPwdCtrl'})
 				.state('dashboard', {url: "/dashboard", templateUrl: "src/view/dashboard/dashboard.html", role: 'public', controller: 'dashBoardCtrl'})
 			$urlRouterProvider.otherwise("/login");
 
