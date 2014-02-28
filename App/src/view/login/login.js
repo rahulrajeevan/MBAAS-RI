@@ -13,7 +13,7 @@ angular.module('MBAAS-RI.view')
 						}
 					})
 						.success(function(data, status, headers, config) {
-							console.log(data);
+							$state.go('dashboard');
 						})
 						.error(function(data, status, headers, config) {
 							$scope.msg = 'Some error in connection !!!!';

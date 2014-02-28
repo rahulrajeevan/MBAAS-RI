@@ -2,7 +2,11 @@
 	background: -webkit-linear-gradient(top, #a90329 0%,#8f0222 44%,#6d0019 100%);
 	border-color:#a90329;
 }
-.button {
-	border-color:#a90329!important;
+.loginButton {
+	border-color:#8f0222!important;
 	background: -webkit-linear-gradient(top, #a90329 0%,#8f0222 44%,#6d0019 100%);
+}
+.dashboard{
+	background: -webkit-linear-gradient(top, #ffffff 0%,#e5e5e5 100%);
+
 }
