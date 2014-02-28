@@ -1,42 +1,31 @@
-<!DOCTYPE html>
-<html ng-app="sampleApp">  
-  <head lang="en">
-	<meta name="apple-mobile-web-app-capable" content="yes" />
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width" />
-	<title>Angular Mobile App</title>    
-	<link rel="stylesheet" href="content/css/default-theme.css" type="text/css"/>
-	<link rel="stylesheet" href="content/css/mobile-nav.css">
-	<link rel="stylesheet" href="content/css/angular-carousel.min.css">
-	<link rel="stylesheet" href="content/css/ng-mobile-menu.min.css"/>
-	<link rel="stylesheet" href="content/css/iui.css">
-	<link rel="stylesheet" href="content/themes/topcoat/css/topcoat-mobile-light.min.css"/> 
-  </head>  
-  <body ng-controller="MainCtrl">
-	<div id="sp-nav">
-		<div class="topcoat-list-container">
-			<input ng-model="navItem" placeholder="Search Menu" class="searchInput"/>
-			<span class="addIcon"></span>			
-			<ul class="topcoat-list">
-				<li class="topcoat-list__item" ng-repeat="item in navItems | filter:navItem">{{item.category}}<span ng-show="item.subcategory" ng-click="toggleSubMenu($event)" class="close"></span>
-					<ul class="topcoat-list hidden">
-						<li ng-repeat="subItem in item.subcategory" class="topcoat-list__item">{{subItem.subMenu}}</li>
-					</ul>
-				</li>
-			</ul>
-		</div>
-	</div>
-	<mobile-view id="sp-page"></mobile-view>
-	<script src="lib/angular.min.js"></script>	
-	<script src="lib/highcharts.js"></script>	
-	<script src="lib/ng-mobile-menu.min.js"></script>
-	<script src="lib/angular-carousel.js"></script>
-	<script src="lib/angular-mobile.js"></script>
-	<script src="lib/mobile-nav.min.js"></script>	
-	<script src="js/app.js"></script>
-	<script src="js/services.js"></script>
-	<script src="js/directives.js"></script>  
-	<script src="js/controllers.js"></script>
-	<script src="js/filters.js"></script>
-  </body>
+<html ng-app="MBAAS-RI">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+
+		<title>MBAAS-RI - Finch Mobile</title>
+
+		<link href="./css/ionic.min.css" rel="stylesheet">
+		<link href="./css/style.css" rel="stylesheet">
+		<script src="../thirdparty/ionic.js"></script>
+		<script src="../thirdparty/angular.js"></script>
+		<script src="../thirdparty/angular-touch.js"></script>
+		<script src="../thirdparty/angular-sanitize.js"></script>
+		<script src="../thirdparty/ionic-angular.js"></script>
+		<script src="../thirdparty/angular-ui-router.min.js"></script>
+
+		<script src="./src/app.js"></script>
+
+
+
+	</head>
+
+	<body>
+	<nav-bar animation="nav-title-slide-ios7" 
+		 type="bar-positive" 
+		 back-button-type="button-icon" 
+		 back-button-icon="ion-arrow-left-c"></nav-bar>
+
+	<nav-view animation="slide-left-right"></nav-view>
+</body>
 </html>
