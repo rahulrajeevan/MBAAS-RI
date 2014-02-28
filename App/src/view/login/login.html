@@ -1,0 +1,24 @@
+<view title="'Log-In'" left-buttons="leftButtons" right-buttons="rightButtons" >
+	<div ng-controller="logInCtrl">
+		<content has-header="true">
+			<div class="list" >
+				<label class="item item-input">
+					<span class="input-label">Username</span>
+					<input type="text" ng-model="username" required>
+				</label>
+					<label class="item item-input">
+					<span class="input-label">Password</span>
+					<input type="password" ng-model="password" required>
+				</label>
+			</div>
+			<div class="padding">
+				<button class="button button-block button-positive" ng-click="signinuser(username,password)">Sign-In</button>
+				<p class="text-center">
+					<a href="#/forgetPassword">Forgot password</a>
+				</p>
+				<p class="warning text-center">{{msg}}</p>
+			</div>
+		</content>
+	</div>
+</view>
+    
