@@ -1,4 +1,6 @@
 angular.module('MBAAS-RI.view')
-	.controller('dashBoardCtrl', ['$scope','UserService', function($scope,User) {
-			console.log('Logger in as '+User.username)
-	}]);
+	.controller('dashBoardCtrl', ['$scope', 'UserService', '$state', function($scope, User, $state) {
+			if (!User.username) {
+				$state.go('login');
+			}
+		}]);

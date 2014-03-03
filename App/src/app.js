@@ -9,13 +9,13 @@ angular.module('MBAAS-RI', ['ionic', 'MBAAS-RI.view'])
 			$urlRouterProvider.otherwise("/login");
 
 		}])
-
+	
 	.factory('UserService', [function() {
-			var sdo = {
+			var loginInfo = {
 				isLogged: false,
 				username: ''
 			};
-			return sdo;
+			return loginInfo;
 		}]);
 
 
