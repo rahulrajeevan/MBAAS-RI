@@ -1,0 +1,19 @@
+<div class="topcoat-navigation-bar">
+        <div class="topcoat-navigation-bar__item left quarter">
+		<a ng-tap="$navigate.back()">Back</a>
+        </div>
+        <div class="topcoat-navigation-bar__item center half">
+		<h1 class="topcoat-navigation-bar__title">Settings</h1>
+        </div>
+        <div class="topcoat-navigation-bar__item right quarter">
+		<a class="topcoat-icon-button--quiet"></a>  
+        </div>
+</div>
+<div class="content panel" scrollable>
+	Here's some content! 
+	<br/>
+	<ul>
+		<li><a ng-tap="$navigate.go('view/popup')">Let's see a modal!</a></li>
+	</ul>
+</div>
+

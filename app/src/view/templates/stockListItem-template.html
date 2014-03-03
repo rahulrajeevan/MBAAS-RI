@@ -1,0 +1,8 @@
+<a ng-tap="$navigate.go('/details:{{items.record.disporder}}', 'slide')">
+					<input type="checkbox" ng-click="showBtnPanel($event,$index)"/>
+					<span>{{items.record.brandcd}}</span>
+					<span>{{items.record.buyquotationprice}}</span>
+					<span>{{items.record.changevalue}}</span>
+					<span ng-hide="{{items.record.changevalue}} < 0">&uarr;</span>
+					<span ng-hide="{{items.record.changevalue}} >= 0">&darr;</span>
+</a>

@@ -1,0 +1,30 @@
+<div class="actBtn" ng-show="isDataSelected">
+	<button ng-disabled="selectedData.length > 1">Order</button>
+	<button ng-click="removeItems()">Remove</button>
+</div>
+<div class="topcoat-navigation-bar">
+        <div class="topcoat-navigation-bar__item left quarter">
+		<a class="topcoat-icon-button--quiet" href="" ng-click="$spMenu.toggle()">
+			<span class="topcoat-icon topcoat-icon--menu-stack"></span>
+		</a>
+        </div>
+        <div class="topcoat-navigation-bar__item center half">
+		<h1 class="topcoat-navigation-bar__title">FCDSA</h1>
+        </div>
+        <div class="topcoat-navigation-bar__item right quarter">
+		<a class="topcoat-icon-button--quiet settings" ng-tap="$navigate.go('view/settings', 'slide')">               
+		</a>
+        </div>
+</div>
+<div class="content panel">
+	<!--<input ng-model="angular" ng-init="angular='angular-mobile-nav'">
+	<p style="text-align: center;">{{angular}} lets you do transitions between partials for easy angular mobile app creation.</p>-->
+
+	<ul>
+		<li ng-repeat="items in data" stock-list-item>
+
+		</li>			
+		<!--<li><a ng-tap="$navigate.go('/backwards')">Logout</a></li>-->
+	</ul>		  
+</div>
+

@@ -1,0 +1,17 @@
+<div class="topcoat-navigation-bar">
+        <div class="topcoat-navigation-bar__item left quarter">
+            <a ng-tap="$navigate.back()">Back</a>
+        </div>
+        <div class="topcoat-navigation-bar__item center half">
+            <h1 class="topcoat-navigation-bar__title">Pop Up</h1>
+        </div>
+        <div class="topcoat-navigation-bar__item right quarter">
+            <a class="topcoat-icon-button--quiet"></a>  
+        </div>
+</div>
+<div class="content panel">
+  Here's a popup.  You'd put some modally content in here. Probably.
+  <br />
+  <span style="color:{{col}}">And of course, everything is still angular-y</span>
+  <br /><input ng-model="col" ng-init="col='darkred'">
+</div>
