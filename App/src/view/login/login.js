@@ -1,9 +1,15 @@
 angular.module('MBAAS-RI.view')
-	.controller('logInCtrl', ['$scope', '$state', '$http', '$ionicLoading', '$timeout',
-		function($scope, $state, $http, $ionicLoading, $timeout) {
+	.controller('logInCtrl', ['$scope', '$state', '$http', '$ionicLoading', '$timeout', 'UserService',
+		function($scope, $state, $http, $ionicLoading, $timeout, User) {
 			$scope.signinuser = function(username, password) {
 				if (username && password) {
-					var names = [];
+					$scope.loading = $ionicLoading.show({
+						content: 'Loading...',
+						animation: 'fade-in',
+						showBackdrop: true,
+						maxWidth: 200,
+						showDelay: 5000
+					});
 					$http({
 						url: 'http://jsonstub.com/login',
 						method: 'POST',
@@ -13,13 +19,27 @@ angular.module('MBAAS-RI.view')
 						}
 					})
 						.success(function(data, status, headers, config) {
-							$state.go('dashboard');
+							if (data[2].role == 'admin')
+							{
+								$scope.loading.hide();
+								User.isLogged = true;
+								User.username = data[0].username;
+								$state.go('dashboard');
+							}
+							else
+							{
+								$scope.loading.hide();
+							}
 						})
 						.error(function(data, status, headers, config) {
+							$scope.loading.hide();
+							User.isLogged = false;
+							User.username = '';
 							$scope.msg = 'Some error in connection !!!!';
 						});
 				}
 				else {
+					$scope.loading.hide();
 					$scope.msg = 'Please Enter User Name and password';
 				}
 			};
