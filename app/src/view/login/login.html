@@ -1,28 +1,10 @@
-<view title="'Finch Mobile'" left-buttons="leftButtons" right-buttons="rightButtons" >
-	<div>
-		<content has-header="true">
-			<div class="list list-inset">
-				<label class="item item-input">
-					<input type="text" ng-model="username" required placeholder="User Name">
-				</label>
-				<label class="item item-input">
-					<input type="password" ng-model="password" required placeholder="Password">
-				</label>
-				<button class="button button-block button-positive loginButton" ng-click="signinuser(username, password)">Sign-In</button>				
-			</div>
-			<div class="padding">
-				<p class="warning text-center">{{msg}}</p>
-				
-				<p class="text-center">
-					<a href="#/forgotPwd">Forgot password</a>
-				</p>
-				
-			</div>
-		</content>
+<div class="scrollable" >
+	<div class="scrollable-content container section">
+		<div >
+			<input type="text"  ng-model="username" bs-input label="" placeholder="User Name" />
+			<input type="password" ng-model="password" bs-input label="" placeholder="Password" />
+			<button class="btn btn-primary center-block" ng-click="userLogin(username, password)">Login</button>
+		</div>
+		<p class='text-center text-danger'>{{msg}}</p>
 	</div>
-
-
-
-
-
-</view>
+</div>

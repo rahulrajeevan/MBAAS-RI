@@ -1,40 +1,18 @@
-angular.module('MBAAS-RI', ["mobile-angular-ui"])
+angular.module('MBAAS-RI', ['MBAAS-RI.view', 'mobile-angular-ui'])
 	.config(function($routeProvider, $locationProvider) {
-		$routeProvider.when('/', {templateUrl: "../app/src/view/home/home.html"});
-		$routeProvider.otherwise('/');
-	})
-	.filter('range', function() {
-		return function(input, total) {
-			total = parseInt(total);
-			for (var i = 0; i < total; i++)
-				input.push(i);
-			return input;
-		};
+		$routeProvider
+			.when('/', {templateUrl: "../app/src/view/login/login.html", controller: 'logInCtrl'})
+			.when('/main', {templateUrl: "../app/src/view/main/main.html", controller: 'logInCtrl'})
+			.when('/home', {templateUrl: "../app/src/view/home/home.html"})
+			.otherwise('/');
 	})
 
-	.directive('exampleCode', function() {
-		return {
-			link: function(scope, elem, attrs) {
-				container = angular.element(document.getElementById(attrs.exampleCode));
-				html = container.html();
-				elem.empty().append("<pre><code>" + escapeHtml(html) + "</code></pre>")
-			}
-		};
-	})
 	.controller('MainController', function($rootScope, $scope) {
 
 	})
+	
 
-var escapeHtml = function(str) {
-	var tagsToReplace = {
-		'&': '&amp;',
-		'<': '&lt;',
-		'>': '&gt;'
-	};
-	return str.replace(/[&<>]/g, function(tag) {
-		return tagsToReplace[tag] || tag;
-	});
-}
+angular.module('MBAAS-RI.view', []);
 
 
 
