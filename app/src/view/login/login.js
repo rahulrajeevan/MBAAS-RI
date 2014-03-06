@@ -1,17 +1,16 @@
 angular.module('MBAAS-RI.view')
-
-	.factory('commonNav', function() {
-		status = 'fail';
+	.factory('commonNav', function() {		
 		var loginStatus = {
-			getStatus: function() {
-				return status;
+			status: 'fail',
+			getStatus: function() {				
+				return this.status;
 			},
 			setStatus: function(updatedStatus) {
-				status = updatedStatus;
+				this.status = updatedStatus;
 			}
 		};
 		return loginStatus;
-	})
+	})	
 
 	.controller('logInCtrl', ['$location', '$scope', 'commonNav', function($location, $scope, commonNav) {
 			$scope.userLogin = function(username, password) {
@@ -30,12 +29,6 @@ angular.module('MBAAS-RI.view')
 				}
 			}
 		}])
-
-
-	.controller('menuCtrl', ['$scope', 'commonNav', function($scope, commonNav) {
-			$scope.loginStatus = commonNav.getStatus();
-			console.log($scope.loginStatus);
-		}]);
 
 
 	
